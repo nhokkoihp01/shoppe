@@ -261,6 +261,8 @@
     border-color: var(--border-color) ;
     border-radius: 2px;
     outline: none;
+
+
 }
 .auth-form__input:focus{
     border-color: #888;

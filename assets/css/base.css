@@ -1,0 +1,121 @@
+:root {
+    --while-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #EE4D2D;
+    --border-color: #dbdbdb
+
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-flow: wrap;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+/*header__notify*/
+.header__notify {
+    position: absolute;
+    top: 117%;
+    right: 0;
+    width: 404px;
+    border: 1px solid #D3D3D3;
+    background-color: var(--while-color);
+    user-select: none;
+    /*cursor: text;*/
+    transform-origin: calc(100% - 20px) top;
+    animation: headerNotifyGrow ease-in 0.25s;
+    will-change: opacity, transform;
+    display: none;
+
+}
+
+.header__notify ::before {
+    content: "";
+    border: solid;
+    border-width: 22px 25px;
+    border-color: transparent transparent var(--while-color) transparent;
+    position: absolute;
+    right: 0px;
+    top: -37px;
+
+}
+
+.header__notify ::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 90px;
+    height: 12px;
+
+}
+
+.header__navbar-item--has-notify:hover .header__notify {
+    display: block;
+}
+
+@keyframes headerNotifyGrow {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+.btn{
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btn.btn--primary{
+    color: var(--while-color);
+    background-color: var(--primary-color);
+}
+.btn.btn--disable{
+    /*cursor: default;*/
+    cursor: default;
+    background-color: #ccc;
+}
+.btn--back:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 12px;
+
+}
